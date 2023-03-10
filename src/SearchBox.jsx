@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-const SearchBox = () => {
+const SearchBox = ({setResults}) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
@@ -11,7 +11,8 @@ const SearchBox = () => {
         const results = json.filter((user) => {
            return value && user && user.name && user.name.toLowerCase().includes(value)
         })
-        console.log(results);
+        // console.log(results);
+        setResults(results)
      })
       .catch((err) => {
         console.log(err);
@@ -34,7 +35,6 @@ const SearchBox = () => {
           onChange={(e) => handleChange(e.target.value)}
         />
       </div>
-      <p>{input}</p>
     </div>
   );
 };
