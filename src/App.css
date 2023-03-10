@@ -1,0 +1,32 @@
+.App{
+  background-color: #eee;
+  height: 100vh;
+  width: 100%;
+
+}
+.search{
+  border: 1px solid #ccc;
+  width: 400px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.search input{
+  border: none;
+  width: 100%;
+  outline: none;
+  background-color: transparent;
+}
+.result{
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 1rem;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.result div{
+  padding: 8px;
+}
