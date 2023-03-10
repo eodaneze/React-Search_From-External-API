@@ -1,8 +1,20 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 const SearchBox = () => {
   const [input, setInput] = useState("");
+  
+  const fetchData = (value) => {
+     axios.get("https://jsonplaceholder.typicode.com/users")
+     .then((res) => {
+        console.log(res.data);
+     })
+     .catch(err => {
+       console.log(err);
+     })
+  }
 
+ fetchData()
   return (
     <div>
       <div className="search">
